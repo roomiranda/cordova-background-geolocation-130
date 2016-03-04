@@ -2,8 +2,8 @@
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.giganti.m1.background-geolocation-130"
-    version="1.3.0">
+    id="com.transistorsoft.cordova.background-geolocation"
+    version="1.3.1">
 
     <name>BackgroundGeolocation</name>
     <description>Sophisticated, battery-efficient background-geolocation plugin for Cordova</description>
@@ -68,7 +68,11 @@
         <!-- required background modes:  App registers for location updates -->
         
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
-            <string>TSLocationManager requires background location tracking</string>
+            <string>App requires background location tracking</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string>App requires background location tracking</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="UIBackgroundModes">
