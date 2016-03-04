@@ -3,7 +3,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.giganti.m1.background-geolocation-130"
-    version="1.3.1">
+    version="1.3.10">
 
     <name>BackgroundGeolocation</name>
     <description>Sophisticated, battery-efficient background-geolocation plugin for Cordova</description>
@@ -34,7 +34,12 @@
         <source-file src="src/android/CDVBackgroundGeolocation.java" target-dir="src/com/transistorsoft/cordova/bggeo" />
         <source-file src="src/android/BootReceiver.java" target-dir="src/com/transistorsoft/cordova/bggeo" />
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <dependency id="com.google.playservices" url="https://github.com/LogicsSoftware/google-play-services.git" />
+        <source-file src="src/android/eventbus-3.0.0-beta1.jar" target-dir="libs" />
+        <source-file src="src/android/classes.jar" target-dir="libs" />       
+        <source-file src="src/android/library-1.0.18.jar" target-dir="libs" />
+
+      <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <service android:name="com.transistorsoft.locationmanager.BackgroundGeolocationService" />
             <service android:name="com.transistorsoft.locationmanager.LocationService" />
             <service android:name="com.transistorsoft.locationmanager.ActivityRecognitionService" />
